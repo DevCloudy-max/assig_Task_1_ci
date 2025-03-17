@@ -20,6 +20,9 @@ jobs:
             
             - name: install dependencies
               run: npm install
-
+            
+            - name: Directories & Files
+              run: ls -l
+              
             - name: run tests
               run: npm test
