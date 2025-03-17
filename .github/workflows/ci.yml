@@ -1,0 +1,25 @@
+name: CI-Pipline
+
+
+on:
+    push:
+        branches:
+            - main
+
+jobs: 
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout repository
+              uses: actions/checkout@v2
+
+            - name: setup node Js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: '18'
+            
+            - name: install dependencies
+              run: npm install
+
+            - name: run tests
+              run: npm test
