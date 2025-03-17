@@ -23,6 +23,9 @@ jobs:
             
             - name: Directories & Files
               run: ls -l
+            
+            - name: npm start
+              run: npm start
               
             - name: run tests
               run: npm test
