@@ -25,15 +25,3 @@ jobs:
 
       - name: Run tests
         run: npm test
-
-      # 🚨 INTENTIONAL MISTAKES FOR TESTING SECRETS EXPOSURE
-
-      - name: Echo dummy secret in plain text (bad practice)
-        run: echo "API_KEY=12345-SECRET-KEY-EXPOSED"
-
-      - name: Use secret as ENV variable but print it (bad practice)
-        env:
-          MY_SECRET_KEY: ${{ secrets.MY_SECRET_KEY }}
-        run: |
-          echo "Using secret key..."
-          echo "Secret Key: $MY_SECRET_KEY"
